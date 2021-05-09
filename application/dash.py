@@ -12,8 +12,8 @@ entidades_p= pd.read_csv("https://raw.githubusercontent.com/fdealbam/censo2020/m
 
 
 # Falta un identificador de la base 1) entidad 2)mpios
-df = entidades_s[entidades_s.ENTIDAD == 19]
-df_p = entidades_p[entidades_p.ENTIDAD == 19]
+df = entidades_s[entidades_s.ENTIDAD == 14]
+df_p = entidades_p[entidades_p.ENTIDAD == 14]
 
 
 noment = df.iloc[0]["NOM_ENT"]
@@ -209,6 +209,7 @@ import sidetable as stb
 import datetime
 from datetime import datetime, timedelta
 from datetime import date
+import geopandas as gpd
 import flask
 import os
 yesterday = datetime.now() - timedelta(1)
@@ -908,7 +909,7 @@ card2p3 = dbc.Card(
          dbc.Button((["", html.H3(dbc.CardImg(src= "https://raw.githubusercontent.com/fdealbam/nuevoleon/main/application/static/refrigerator-light.svg?raw=true", 
                                 style={"color": "black",
                                        "height" :"25px",
-                                      "background-color": "light"})),
+                                      "background-clor": "light"})),
 
                  html.H6(" Con refrigerador ",
                         style={"color":"black",
@@ -921,12 +922,11 @@ card2p3 = dbc.Card(
         ]),style={ "background-color": "light"}),
             
 
-#poner aqui lavadora 
-       
+#poner aqui lavadora            
          dbc.Button((["", html.H3(dbc.CardImg(src= "https://raw.githubusercontent.com/fdealbam/censo2020/main/laundry.svg?raw=true", 
                                 style={"color": "black",
                                        "height" :"25px",
-                                      "background-color": "light"})),
+                                      "background-clor": "light"})),
                       html.H6(" Con lavadora ",
                         style={"color":"black",
                                 "font-size":10,
@@ -1107,8 +1107,7 @@ row2 = html.Tr([dbc.Alert("Población en hogares con jefatura masculina", color=
 
 row3 = html.Tr([dbc.Alert("Población en hogares con jefatura femenina", color="#E0E0E0",), 
                 html.Td(f"{int(poblacionenhogaresconjefaturafemenina_s):,}"),
-                dbc.Alert([(poblacionenhogaresconjefaturafemenina_p),"%"],
-                          color="light",
+                dbc.Alert([(poblacionenhogaresconjefaturafemenina_p),"%"], color="light",
                         style={"font-size": "35px",
                         "font-weight": 'bold',
                         "color": "#F48FB1",       
@@ -1151,6 +1150,7 @@ card_v_hog_cens = dbc.Card(
     
     style={"width": "50rem", 
           "border": "0",
+           "stripped": True,
           "fill" : "orange"},
 )
 
