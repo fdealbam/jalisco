@@ -1,4 +1,4 @@
-#NUEVO LEON 
+#JALISCO
 
 import os
 import pandas as pd
@@ -12,8 +12,8 @@ entidades_p= pd.read_csv("https://raw.githubusercontent.com/fdealbam/censo2020/m
 
 
 # Falta un identificador de la base 1) entidad 2)mpios
-df = entidades_s[entidades_s.ENTIDAD == 19]
-df_p = entidades_p[entidades_p.ENTIDAD == 19]
+df = entidades_s[entidades_s.ENTIDAD == 14]
+df_p = entidades_p[entidades_p.ENTIDAD == 14]
 
 
 noment = df.iloc[0]["NOM_ENT"]
